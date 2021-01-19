@@ -1,5 +1,5 @@
 import express from 'express';
-import { getHashTags } from '../../controllers/hashtagController';
+import { getHashTags } from '../../../controllers/hashtagController.js';
 
 const router = express.Router();
 

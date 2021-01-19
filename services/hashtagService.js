@@ -1,6 +1,6 @@
-import HashTag from '../models/Hashtag';
+import HashTag from '../models/Hashtag.js';
 
-export async function getHashTags(){
+export default async function getHashTags() {
   const hashTags = await HashTag.find({});
 
   return hashTags;

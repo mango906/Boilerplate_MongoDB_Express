@@ -1,7 +1,8 @@
 import express from 'express';
-import router from './hashTags';
-import hashTagRouter from './hashTags';
+import hashTagRouter from './hashtags/index.js';
 
-router.use('/:postId/hashtags', hashtagRouter);
+const router = express.Router();
+
+router.use('/:postId/hashtags', hashTagRouter);
 
 export default router;
