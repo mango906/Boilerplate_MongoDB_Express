@@ -19,3 +19,8 @@ export async function addHashTag(req, res) {
     res.status(500).send('Error while add hashTag');
   }
 }
+
+export default {
+  getHashTags,
+  addHashTag,
+};
