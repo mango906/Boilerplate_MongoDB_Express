@@ -1,20 +1,20 @@
 import hashTagService from '../services/hashtagService.js';
 
-export async function getHashTags(req, res) {
+async function getHashTags(req, res) {
   try {
     const hashTags = hashTagService.getHashTags();
-    res.status(200).send(hashTags);
+    res.status(200).json(hashTags);
   } catch (err) {
     res.status(500).send('Error while find hashTags');
   }
 }
 
-export async function addHashTag(req, res) {
+async function addHashTag(req, res) {
   try {
     const { tag } = req.body;
 
     const hashTag = hashTagService.addHashTag(tag);
-    res.status(200).send(hashTag);
+    res.status(200).json(hashTag);
   } catch (err) {
     res.status(500).send('Error while add hashTag');
   }
