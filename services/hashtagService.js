@@ -11,3 +11,8 @@ export async function addHashTags(tag) {
 
   return hashTags;
 }
+
+export default {
+  getHashTags,
+  addHashTags,
+};
