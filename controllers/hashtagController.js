@@ -11,7 +11,7 @@ export async function getHashTags(req, res) {
 
 export async function addHashTag(req, res) {
   try {
-    const tag = req.body.tag;
+    const { tag } = req.body;
 
     const hashTag = hashTagService.addHashTag(tag);
     res.status(200).send(hashTag);
