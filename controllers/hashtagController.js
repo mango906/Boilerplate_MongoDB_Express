@@ -9,6 +9,17 @@ async function getHashTags(req, res) {
   }
 }
 
+async function getHashTag(req, res) {
+  try {
+    const { id } = req.body;
+
+    const hashTag = hashTagService.getHashTag(id);
+    res.status(200).json(hashTag);
+  } catch {
+    res.status(500).json('Error while find hashTag');
+  }
+}
+
 async function addHashTag(req, res) {
   try {
     const { tag } = req.body;
@@ -50,6 +61,7 @@ async function deleteHashTag(req, res) {
 
 export default {
   getHashTags,
+  getHashTag,
   addHashTag,
   updateHashTag,
   deleteHashTag,
