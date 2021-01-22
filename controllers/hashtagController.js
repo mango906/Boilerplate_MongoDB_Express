@@ -25,7 +25,7 @@ async function updateHashTag(req, res) {
     const { id } = req.params;
     const { tag } = req.body;
 
-    const hashTag = hashTagService.updateHashTags({
+    const hashTag = hashTagService.updateHashTag({
       _id: id,
       tag,
     });
@@ -40,7 +40,7 @@ async function deleteHashTag(req, res) {
   try {
     const { id } = req.params;
 
-    const result = hashTagService.deleteHashTags(id);
+    const result = hashTagService.deleteHashTag(id);
 
     res.status(200).json(result);
   } catch (err) {
