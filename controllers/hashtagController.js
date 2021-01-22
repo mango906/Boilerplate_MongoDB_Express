@@ -36,8 +36,21 @@ async function updateHashTag(req, res) {
   }
 }
 
+async function deleteHashTag(req, res) {
+  try {
+    const { id } = req.params;
+
+    const result = hashTagService.deleteHashTags(id);
+
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(500).json('Error while delete hashTag');
+  }
+}
+
 export default {
   getHashTags,
   addHashTag,
   updateHashTag,
+  deleteHashTag,
 };

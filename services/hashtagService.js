@@ -25,6 +25,12 @@ async function updateHashTags(hashTagDoc) {
   return hashTag;
 }
 
+async function deleteHashTags(id) {
+  await HashTag.deleteOne({ _id: id });
+
+  return id;
+}
+
 export default {
   getHashTags,
   addHashTags,
